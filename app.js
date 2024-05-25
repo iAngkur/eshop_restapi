@@ -3,8 +3,10 @@ const morgan = require('morgan'); // logging incoming data
 const mongoose = require('mongoose');
 const productsRouter = require('./routers/products');
 const categoriesRouter = require('./routers/categories');
+const usersRouter = require('./routers/users');
+const ordersRouter = require('./routers/orders');
 const cors = require('cors');
-require('dotenv/config');
+require("dotenv").config()
 
 const app = express();
 const api = process.env.API_URL;
@@ -19,6 +21,8 @@ app.use(cors({
 // Routes
 app.use(`${api}/products`, productsRouter);
 app.use(`${api}/categories`, categoriesRouter);
+app.use(`${api}/users`, usersRouter);
+app.use(`${api}/orders`, ordersRouter);
 
 // Database
 mongoose.connect(process.env.DB_URL, {

@@ -1,27 +1,34 @@
-const Product = require('../models/product.js');
+const User = require('../models/user.js');
 const express = require('express');
 const router = express.Router();
 
-router.get(`/`, async (req, res) => {
-    const products = await Product.find();
+router.get('/', async (req, res) => {
+    const users = await User.find();
 
-    if (!products) {
+    if (!users) {
         res.status(500).json({
             success: false
         });
     }
-    res.send(products);
+    res.status(200).json({ data: users, success: true });
 });
 
-router.post(`/`, (req, res) => {
-    const product = new Product({
+router.post('/', (req, res) => {
+    const user = new User({
         name: req.body.name,
-        image: req.body.image,
-        countInStock: req.body.countInStock
+        email: req.body.email,
+        passwordHash: req.body.passwordHash,
+        phone: req.body.phone,
+        isAdmin: req.body.isAdmid,
+        street: req.body.street,
+        apartment: req.body.apartment,
+        zip: req.body.zip,
+        city: req.body.city,
+        country: req.body.country
     });
-    product.save()
-        .then((createdProduct) => res.status(201).json({
-            data: createdProduct,
+    user.save()
+        .then((createdUser) => res.status(200).json({
+            data: createdUser,
             success: true
         }))
         .catch((err) => res.status(500).json({
