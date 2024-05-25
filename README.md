@@ -1,5 +1,10 @@
 # E-shop REST API
 
+### Datebase Structure
+<img src="https://github.com/iAngkur/eshop_restapi/blob/main/design/DB.PNG" alt="database structure" width="500px" height="400px" />
+
+## How to use the API
+
 ### API Base URL: http://localhost:3000/api/v1
 
 ### PRODUCTS:
