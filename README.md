@@ -13,7 +13,7 @@
 | GET          | /products     | Select all the products    |
 | POST         | /products      | Insert a product      |
 | DELETE       | /products/:productID     | Delete a product    |
-| PATCH        | /products/:productID       | Update a product      |
+| PUT        | /products/:productID       | Update a product      |
 
 ### CATEGORIES:
 | Method       | Endpoint       | Description   |
@@ -21,4 +21,4 @@
 | GET          | /categories     | Select all the categories    |
 | POST         | /categories      | Insert a category      |
 | DELETE       | /categories/:categoryID     | Delete a category    |
-| PATCH        | /categories/:categoryID       | Update a category      |
+| PUT        | /categories/:categoryID       | Update a category      |
