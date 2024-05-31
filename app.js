@@ -34,5 +34,5 @@ mongoose.connect(process.env.DB_URL, {
 // Server
 app.listen(3000, () => {
     console.log(api);
-    console.log('The server is running on port https://hocalhost:3000')
+    console.log('The server is running on port https://localhost:3000')
 })
